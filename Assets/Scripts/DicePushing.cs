@@ -2,22 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using UnityEngine;
+using Photon.Pun;
+using JetBrains.Annotations;
 
 public class DicePushing : MonoBehaviour
 {
     [SerializeField] private Vector3 pushDirrection;
     [SerializeField] private float maxPushForce;
     [SerializeField] private Rigidbody myRb;
+    //[SerializeField] private PhotonView viev;
 
     void Start()
     {
         myRb = GetComponent<Rigidbody>();
+        //viev = GetComponent<PhotonView>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.touchCount > 0)
+        {
+            PushDice();
+        }
     }
 
     private void PushDice()
@@ -26,9 +32,14 @@ public class DicePushing : MonoBehaviour
     }
 
     private void OnMouseDown()
+    { 
+            var random = Random.Range(-maxPushForce, maxPushForce);
+            pushDirrection = new Vector3(random, random, random);
+            PushDice();
+    }
+
+    public void SendData()
     {
-        var random = Random.Range(-maxPushForce, maxPushForce);
-        pushDirrection = new Vector3(random, random, random);
-        PushDice();
+       // PhotonView.RPC("PushDice", RpcTarget.AllBuffered, PhotonNetwork.NickName,transform.gameObject);
     }
 }
