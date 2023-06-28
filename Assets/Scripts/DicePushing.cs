@@ -1,5 +1,7 @@
 using Photon.Pun;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class DicePushing : MonoBehaviour
 {
@@ -23,6 +25,7 @@ public class DicePushing : MonoBehaviour
     [SerializeField] private Rigidbody myRb;
     [SerializeField] private PhotonView viev;
     [SerializeField] private PhotonTransformView trView;
+    //[SerializeField] private TextMeshProUGUI tmp;
 
 
     void Start()
@@ -37,15 +40,12 @@ public class DicePushing : MonoBehaviour
         {
             TakeDice();
         }
-
-        //AxisX = Input.GetAxis("Mouse X");
-        //AxisY = Input.GetAxis("Mouse Y");
-
+        //To SHOW THE AXIS SPEED ON DISPLAY
+        //tmp.text = AxisX.ToString();
     }
 
     private void PushDice(Vector3 dirrection)
     {
-        //myRb.velocity = dirrection;
         myRb.AddForce(dirrection, ForceMode.Impulse);
     }
 
@@ -72,18 +72,17 @@ public class DicePushing : MonoBehaviour
         myPosition.z = worldMousePosition.z * offsetZ;
         myPosition.x = worldMousePosition.x * offsetX;
         myPosition.y = worldMousePosition.y * offsetY;
-
-        AxisX = Input.GetAxis("Mouse X");
-        AxisY = Input.GetAxis("Mouse Y");
     }
 
     private void ThrowDice()
     {
+        AxisX = Input.GetAxis("Mouse X");
+        AxisY = Input.GetAxis("Mouse Y");
+
         isTaken = false;
         var random = Random.Range(-PushForce, PushForce);
         pushDirrection = new Vector3(AxisX * PushForce, 0, AxisY * PushForce);
         myRb.isKinematic = false;
-        Debug.Log(AxisX);
         PushDice(pushDirrection);
     }
 }

@@ -418,11 +418,12 @@ MonoBehaviour:
   AxisX: 0
   AxisY: 0
   PushForce: 100
-  speed: 1
+  speed: 0.5
   isTaken: 0
   myRb: {fileID: 0}
   viev: {fileID: 0}
   trView: {fileID: 0}
+  tmp: {fileID: 0}
 --- !u!114 &1754091951
 MonoBehaviour:
   m_ObjectHideFlags: 0
