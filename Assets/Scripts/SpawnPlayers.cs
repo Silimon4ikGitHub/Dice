@@ -14,7 +14,7 @@ public class SpawnPlayers : MonoBehaviour
     {
         
         view = GetComponent<PhotonView>();
-        AddCount(text);
+        //AddCount(text);
         PhotonNetwork.Instantiate(player.name, transform.position, Quaternion.identity);
         view.RPC("AddCount", RpcTarget.AllBuffered, text);
     }

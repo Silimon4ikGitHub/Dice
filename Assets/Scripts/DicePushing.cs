@@ -31,32 +31,35 @@ public class DicePushing : MonoBehaviour
         viev = GetComponent<PhotonView>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (isTaken)
         {
             TakeDice();
         }
 
-        AxisX = Input.GetAxis("Mouse X");
-        AxisY = Input.GetAxis("Mouse Y");
+        //AxisX = Input.GetAxis("Mouse X");
+        //AxisY = Input.GetAxis("Mouse Y");
 
     }
 
     private void PushDice(Vector3 dirrection)
     {
-        myRb.velocity = dirrection;
+        //myRb.velocity = dirrection;
+        myRb.AddForce(dirrection, ForceMode.Impulse);
     }
 
     private void OnMouseDown()
     {
              viev.RequestOwnership();
              isTaken = true;
+
     }
 
     private void OnMouseUp()
     {
         ThrowDice();
+        viev.RequestOwnership();
     }
 
     private void TakeDice()
@@ -69,6 +72,9 @@ public class DicePushing : MonoBehaviour
         myPosition.z = worldMousePosition.z * offsetZ;
         myPosition.x = worldMousePosition.x * offsetX;
         myPosition.y = worldMousePosition.y * offsetY;
+
+        AxisX = Input.GetAxis("Mouse X");
+        AxisY = Input.GetAxis("Mouse Y");
     }
 
     private void ThrowDice()
@@ -77,6 +83,7 @@ public class DicePushing : MonoBehaviour
         var random = Random.Range(-PushForce, PushForce);
         pushDirrection = new Vector3(AxisX * PushForce, 0, AxisY * PushForce);
         myRb.isKinematic = false;
+        Debug.Log(AxisX);
         PushDice(pushDirrection);
     }
 }

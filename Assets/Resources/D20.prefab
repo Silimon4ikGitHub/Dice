@@ -263,8 +263,9 @@ GameObject:
   - component: {fileID: 7295696776405207046}
   - component: {fileID: 7295696776405207041}
   - component: {fileID: 6043024478239710961}
-  - component: {fileID: 1754091950}
   - component: {fileID: 1754091951}
+  - component: {fileID: 1754091958}
+  - component: {fileID: 1754091966}
   m_Layer: 0
   m_Name: d20 outline
   m_TagString: Untagged
@@ -376,7 +377,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!64 &7295696776405207041
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -384,7 +385,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 896237898267664097}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ebbf393b19c307d4e896d9ce6f61c4fe, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -404,26 +405,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushDirrection: {x: 0, y: 0, z: 0}
-  maxPushForce: 10
+  myPosition: {x: 0, y: 0, z: 0}
+  screenMousePosition: {x: 0, y: 0, z: 0}
+  worldMousePosition: {x: 0, y: 0, z: 0}
+  centerPosition: {x: 0.04, y: 23, z: -12}
+  offsetZ: 40
+  offsetX: 56
+  offsetY: 25
+  forceX: 100
+  forceY: 20
+  forceZ: 100
+  AxisX: 0
+  AxisY: 0
+  PushForce: 100
+  speed: 1
+  isTaken: 0
   myRb: {fileID: 0}
   viev: {fileID: 0}
   trView: {fileID: 0}
---- !u!114 &1754091950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 896237898267664097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!114 &1754091951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,13 +439,42 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   Synchronization: 3
-  OwnershipTransfer: 0
+  OwnershipTransfer: 1
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 1754091950}
+  - {fileID: 1754091958}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &1754091958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896237898267664097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64179f3720bbfe947b7724caa67b7c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizeVelocity: 1
+  m_SynchronizeAngularVelocity: 1
+  m_TeleportEnabled: 0
+  m_TeleportIfDistanceGreaterThan: 3
+--- !u!114 &1754091966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896237898267664097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae5a48c480748a74190ef1d6b7c98e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 0
 --- !u!1 &1775474783515882754
 GameObject:
   m_ObjectHideFlags: 0
