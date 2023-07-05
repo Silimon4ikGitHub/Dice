@@ -23,6 +23,8 @@ public class DicePushing : MonoBehaviour
     [SerializeField] private bool isTaken = false;
 
     [SerializeField] private Rigidbody myRb;
+    [SerializeField] private GameObject diceSpawner;
+    [SerializeField] private GameObject diceLeavePoint;
     [SerializeField] private PhotonView viev;
     [SerializeField] private PhotonTransformView trView;
     //[SerializeField] private TextMeshProUGUI tmp;
@@ -32,6 +34,8 @@ public class DicePushing : MonoBehaviour
     {
         myRb = GetComponent<Rigidbody>();
         viev = GetComponent<PhotonView>();
+        diceSpawner = GameObject.FindGameObjectWithTag("DiceSpawner");
+        diceLeavePoint = GameObject.FindGameObjectWithTag("LeavePoint");
     }
 
     void FixedUpdate()
@@ -39,6 +43,11 @@ public class DicePushing : MonoBehaviour
         if (isTaken)
         {
             TakeDice();
+        }
+
+        if (transform.position.y < diceLeavePoint.transform.position.y)
+        {
+            ReloadDice();
         }
         //To SHOW THE AXIS SPEED ON DISPLAY
         //tmp.text = AxisX.ToString();
@@ -84,5 +93,10 @@ public class DicePushing : MonoBehaviour
         pushDirrection = new Vector3(AxisX * PushForce, 0, AxisY * PushForce);
         myRb.isKinematic = false;
         PushDice(pushDirrection);
+    }
+
+    private void ReloadDice()
+    {
+        transform.position = diceSpawner.transform.position;
     }
 }
