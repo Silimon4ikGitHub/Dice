@@ -6,10 +6,10 @@ PhysicMaterial:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: dice-material
-  dynamicFriction: 1
-  staticFriction: 1
-  bounciness: 0.5
+  m_Name: D4
+  dynamicFriction: 200
+  staticFriction: 0.5
+  bounciness: 0.8
   frictionCombine: 0
   bounceCombine: 3
 --- !u!1002 &13400001
