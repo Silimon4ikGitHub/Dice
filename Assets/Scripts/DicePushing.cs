@@ -60,9 +60,8 @@ public class DicePushing : MonoBehaviour
 
     private void OnMouseDown()
     {
-             viev.RequestOwnership();
-             isTaken = true;
-
+       viev.RequestOwnership();
+       isTaken = true;
     }
 
     private void OnMouseUp()

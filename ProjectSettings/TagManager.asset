@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DiceSpawner
   - LeavePoint
+  - ScoreText
   layers:
   - Default
   - TransparentFX
