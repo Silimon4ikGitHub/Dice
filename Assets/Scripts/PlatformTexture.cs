@@ -16,7 +16,7 @@ public class PlatformTexture : MonoBehaviourPunCallbacks
         
     }
 
-    // Update is called once per frame
+    /*
     void Update()
     {
         if (index > materials.Length - 1)
@@ -44,4 +44,5 @@ public class PlatformTexture : MonoBehaviourPunCallbacks
     {
         index++;
     }
+*/
 }

@@ -493,6 +493,7 @@ GameObject:
   - component: {fileID: 637282824}
   - component: {fileID: 637282823}
   - component: {fileID: 637282825}
+  - component: {fileID: 637282826}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -509,7 +510,7 @@ RectTransform:
   m_GameObject: {fileID: 637282821}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.2448, y: 3.2448, z: 3.2448}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1527535567}
@@ -633,12 +634,27 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   Synchronization: 3
-  OwnershipTransfer: 0
+  OwnershipTransfer: 1
   observableSearch: 2
   ObservedComponents: []
   sceneViewId: 2
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &637282826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637282821}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af0cffb1c678e154f88fde66ad4a9ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 0}
+  view: {fileID: 0}
+  score: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
