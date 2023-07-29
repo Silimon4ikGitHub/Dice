@@ -1016,7 +1016,7 @@ GameObject:
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: PC Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1231,6 +1231,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3bbbc25881226434b86bd98e9424cd6c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400000, guid: 3bbbc25881226434b86bd98e9424cd6c, type: 3}
+      propertyPath: m_Drag
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5400000, guid: 3bbbc25881226434b86bd98e9424cd6c, type: 3}
@@ -1783,7 +1787,7 @@ PrefabInstance:
     - target: {fileID: 3317065716583664342, guid: c929c086873a473418aebd6bc1810b8e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.049999237
+      value: -2.21
       objectReference: {fileID: 0}
     - target: {fileID: 3317065716583664342, guid: c929c086873a473418aebd6bc1810b8e,
         type: 3}
