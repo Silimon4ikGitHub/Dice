@@ -34,7 +34,8 @@ public class Die : MonoBehaviour {
 	//------------------------------------------------------------------------------------------------------------------------------	
 	
 	// normalized (hit)vector from die center to upper side in local space is used to determine what side of a specific die is up/down = value
-    protected Vector3 localHitNormalized;
+    public Vector3 localHitNormalized;
+    public Vector3 TestVector;
 	// hitVector check margin
     protected float validMargin = 0.45F;
 
@@ -83,6 +84,7 @@ public class Die : MonoBehaviour {
 			// get testHitVector from current side, HitVector is a overriden method in the dieType specific Die subclass
 			// eacht dieType subclass will expose all hitVectors for its sides,
             testHitVector = HitVector(side);
+            TestVector = testHitVector;
             if (testHitVector != Vector3.zero)
             {
 				// this side has a hitVector so validate the x,y and z value against the local normalized hitVector using the margin.
@@ -129,5 +131,9 @@ public class Die : MonoBehaviour {
     {
         return Vector3.zero;
     }
-	
+    private void OnDrawGizmos()
+    {
+        Debug.DrawRay(transform.position, TestVector * 10000000);
+    }
+
 }

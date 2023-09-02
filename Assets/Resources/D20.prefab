@@ -265,7 +265,6 @@ GameObject:
   - component: {fileID: 6043024478239710961}
   - component: {fileID: 1754091951}
   - component: {fileID: 1754091958}
-  - component: {fileID: 1754091966}
   m_Layer: 0
   m_Name: d20 outline
   m_TagString: Untagged
@@ -421,9 +420,10 @@ MonoBehaviour:
   speed: 0.5
   isTaken: 0
   myRb: {fileID: 0}
+  diceSpawner: {fileID: 0}
+  diceLeavePoint: {fileID: 0}
   viev: {fileID: 0}
   trView: {fileID: 0}
-  tmp: {fileID: 0}
 --- !u!114 &1754091951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -463,19 +463,6 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 1
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
---- !u!114 &1754091966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 896237898267664097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae5a48c480748a74190ef1d6b7c98e36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  value: 0
 --- !u!1 &1775474783515882754
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,7 +15,6 @@ public class ScoreText : MonoBehaviour
     void Start()
     {
         text = GameObject.FindGameObjectWithTag("ScoreText").GetComponent<TMP_Text>();
-        d10 = GetComponent<Die>();
         view = GetComponent<PhotonView>();
     }
 
