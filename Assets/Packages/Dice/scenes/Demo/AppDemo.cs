@@ -238,10 +238,10 @@ public class AppDemo : MonoBehaviour {
             // left mouse button clicked so roll random colored dice 2 of each dieType
             Dice.Clear();
 
-            Dice.Roll("1d10", "d10-" + randomColor, spawnPoint.transform.position, Force());
-            Dice.Roll("1d10", "d10-" + randomColor, spawnPoint.transform.position, Force());
-            Dice.Roll("1d10", "d10-" + randomColor, spawnPoint.transform.position, Force());
-            Dice.Roll("1d10", "d10-" + randomColor, spawnPoint.transform.position, Force());
+            Dice.Roll("1d10", "dice-" + randomColor, spawnPoint.transform.position, Force());
+            Dice.Roll("1d10", "dice-" + randomColor, spawnPoint.transform.position, Force());
+            Dice.Roll("1d10", "dice-" + randomColor, spawnPoint.transform.position, Force());
+            Dice.Roll("1d10", "dice-" + randomColor, spawnPoint.transform.position, Force());
             Dice.Roll("1d6", "d6-" + randomColor, spawnPoint.transform.position, Force());
             Dice.Roll("1d6", "d6-" + randomColor, spawnPoint.transform.position, Force());
             Dice.Roll("1d6", "d6-" + randomColor, spawnPoint.transform.position, Force());
@@ -363,8 +363,8 @@ public class AppDemo : MonoBehaviour {
                     else
                         if (mp.x - r.xMin < 147)
                         {
-                            if (mlb) SetGalleryDie("d10-" + galleryDie.Split('-')[1]);
-                            status = "d10";
+                            if (mlb) SetGalleryDie("dice-" + galleryDie.Split('-')[1]);
+                            status = "dice";
                         }
                         else
                             if (mp.x - r.xMin < 180)

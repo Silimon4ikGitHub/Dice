@@ -10,7 +10,7 @@ public class ScoreText : MonoBehaviour
 {
     [SerializeField] private TMP_Text text;
     [SerializeField] private PhotonView view;
-    [SerializeField] private Die d10;
+    public Die dice;
     [SerializeField] public int score;
     void Start()
     {
@@ -21,7 +21,7 @@ public class ScoreText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score = d10.value;
+        score = dice.value;
         text.text = score.ToString();
     }
 

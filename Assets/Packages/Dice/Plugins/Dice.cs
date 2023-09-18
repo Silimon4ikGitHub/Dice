@@ -129,7 +129,7 @@ public class Dice : MonoBehaviour {
 	/// <summary>
 	/// Roll one or more dice with a specific material from a spawnPoint and give it a specific force.
 	/// format dice 			: 	({count}){die type}	, exmpl.  d6, 4d4, 12d8 , 1d20
-	/// possible die types 	:	d4, d6, d8 , d10, d12, d20
+	/// possible die types 	:	d4, d6, d8 , dice, d12, d20
 	/// </summary>
 	public static void Roll(string dice, string mat, Vector3 spawnPoint, Vector3 force)
 	{
@@ -232,7 +232,7 @@ public class Dice : MonoBehaviour {
         {
 			// no dieType specified to cumulate values per dieType ( if they are available )
             if (Count("d6") > 0) v += AsString("d6") + " | ";
-            if (Count("d10") > 0) v += AsString("d10") + " | ";
+            if (Count("dice") > 0) v += AsString("dice") + " | ";
         }
         else
         {

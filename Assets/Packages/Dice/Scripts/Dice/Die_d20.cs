@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class Die_d20 : Die
+public class Die_d20 : Die, IControlable
 {
     override protected Vector3 HitVector(int side)
     {

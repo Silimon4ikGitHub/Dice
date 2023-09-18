@@ -27,7 +27,6 @@ public class DicePushing : MonoBehaviour
     [SerializeField] private GameObject diceLeavePoint;
     [SerializeField] private PhotonView viev;
     [SerializeField] private PhotonTransformView trView;
-    //[SerializeField] private TextMeshProUGUI tmp;
 
 
     void Start()
@@ -49,8 +48,6 @@ public class DicePushing : MonoBehaviour
         {
             ReloadDice();
         }
-        //To SHOW THE AXIS SPEED ON DISPLAY
-        //tmp.text = AxisX.ToString();
     }
 
     private void PushDice(Vector3 dirrection)

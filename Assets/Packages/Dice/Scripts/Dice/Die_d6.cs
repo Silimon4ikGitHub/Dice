@@ -2,7 +2,8 @@
 using UnityEngine;
 using System.Collections;
 
-public class Die_d6 : Die {
+public class Die_d6 : Die, IControlable
+{
 		
     override protected Vector3 HitVector(int side)
     {
