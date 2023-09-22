@@ -4,21 +4,27 @@ using System.Collections.Generic;
 using System.Reflection;
 using TMPro;
 using UnityEngine;
+using Photon.Pun;
 
 public class DiceController : MonoBehaviour
 {
     public GameObject currentDice;
+    public GameObject sendedDice;
     public GameObject[] dices;
     public TMP_Text currentDiceCount;
         
     private IControlable diceUnderControl;
+    private PhotonView m_View;
 
 
     void Start()
     {
+        m_View = GetComponent<PhotonView>();
+
         dices = GameObject.FindGameObjectsWithTag("Dice");
 
-        currentDice = dices[0];
+        //currentDice = dices[0];
+        //sendedDice = dices[1];
         diceUnderControl = currentDice.GetComponent<IControlable>();
         if (diceUnderControl == null)
         {
@@ -31,19 +37,14 @@ public class DiceController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             GetDiceOnMouseRay();
+            SendInterface();
         }
 
         if (diceUnderControl.IsRolling())
         {
-            DiceValueUpdate(currentDiceCount);
+            //currentDiceCount.text = sendedDice.name.ToString();
+            //DiceValueUpdate(currentDiceCount);
         }
-        /*for (int i = 0; i < dices.Length; i++)
-        {
-            if (dices[i].GetComponent<Die>().rolling)
-            {
-                currentDice = dices[i];
-            }
-        }*/
     }
 
 
@@ -67,5 +68,16 @@ public class DiceController : MonoBehaviour
     private void DiceValueUpdate(TMP_Text text)
     {
         text.text = diceUnderControl.TakeValue().ToString();
+    }
+
+    public void SendInterface()
+    {
+        m_View.RPC("ValueNetwirkUpdate", RpcTarget.AllBuffered, diceUnderControl.TakeValue().ToString());
+    }
+
+    [PunRPC]
+    public void ValueNetwirkUpdate(string dice)
+    {
+        currentDiceCount.text = dice;
     }
 }
