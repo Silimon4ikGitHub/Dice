@@ -22,10 +22,10 @@ public class Die : MonoBehaviour {
     {
         get
         {
-            //return false;
+            return true;
 
             // For show count on stop - 
-            return !(GetComponent<Rigidbody>().velocity.sqrMagnitude < 0.1F && GetComponent<Rigidbody>().angularVelocity.sqrMagnitude < 0.1F);
+            //return !(GetComponent<Rigidbody>().velocity.sqrMagnitude < 0.1F && GetComponent<Rigidbody>().angularVelocity.sqrMagnitude < 0.1F);
         }
     }
 
@@ -83,7 +83,7 @@ public class Die : MonoBehaviour {
 
     void Update()
     {
-        if (!rolling && localHit)
+        if (rolling && localHit)
             GetValue();
     }
 

@@ -37,11 +37,12 @@ public class DiceController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             GetDiceOnMouseRay();
-            SendInterface();
+            
         }
 
         if (diceUnderControl.IsRolling())
         {
+            SendInterface();
             //currentDiceCount.text = sendedDice.name.ToString();
             //DiceValueUpdate(currentDiceCount);
         }
