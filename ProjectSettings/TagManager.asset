@@ -8,6 +8,7 @@ TagManager:
   - LeavePoint
   - ScoreText
   - Dice
+  - DiceController
   layers:
   - Default
   - TransparentFX

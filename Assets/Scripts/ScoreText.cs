@@ -9,6 +9,7 @@ using Unity.VisualScripting;
 public class ScoreText : MonoBehaviour
 {
     [SerializeField] private TMP_Text text;
+    [SerializeField] private TMP_Text diceValue;
     [SerializeField] private PhotonView view;
     public Die dice;
     [SerializeField] public int score;
@@ -23,6 +24,7 @@ public class ScoreText : MonoBehaviour
     {
         score = dice.value;
         text.text = score.ToString();
+
     }
 
     private void AddScore()
